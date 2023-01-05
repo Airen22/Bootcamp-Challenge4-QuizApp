@@ -4,13 +4,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Code Quiz</title>
+    <title>Trivia Quiz</title>
     <link rel="stylesheet" href="./assets/css/reset.css" />
     <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
 <body>
-    <h1 class="time" style="text-align:right; margin-right:5px; margin-top:5px; font-size:large;"></h1>
-    <button id="start">Start</button>
+    <a href="./highscore.html">Highscores</a> 
+    <section>
+        <div class="timer-count"> Timer: 60</div>
+    </section>
+    <section class="prompt-space">
+        <div class="start-page" >
+            <h1>Trivia Quiz</h1>
+            <p>Answer the following trivia questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by 10 seconds!</p>
+            <button class="start-button">Start Quiz</button>
+        </div>
+
+        <div class="question-container hide">
+            <div id="question"></div>
+            <button class="btn" id="answer-a"></button>
+            <button class="btn" id="answer-b"></button>
+            <button class="btn" id="answer-c"></button>
+        </div>
+      </section>
     <script src="./assets/js/script.js"></script>
 </body>
 </html>

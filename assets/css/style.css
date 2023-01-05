@@ -1,0 +1,34 @@
+.timer-count {
+    margin-left: 90%;
+    font-weight: bold;
+}
+
+.prompt-space {
+    margin: 20%;
+    text-align: center;
+    justify-items: center;
+    font-size: larger;
+    line-height: 30px;  
+}
+
+.hide {
+    display: none;
+}
+
+.question-container {
+    justify-items: center;
+}
+
+button:hover {
+    background-color: darkgray;
+    color: #fff;
+}
+.btn {
+    height: max-content;
+    display:block;
+    padding: 5px;
+    margin: 10px;
+    background-color: gray;
+    border-radius: 5px
+    
+}
