@@ -7,7 +7,7 @@ var question = document.querySelector("#question");
 var btns = document.querySelector("#btns");
 var scoreContainer = document.querySelector(".score-container");
 var finalScore = document.querySelector("#final-score")
-var inputEl = document.querySelector("#initial-input")
+var inputEl = document.querySelector("#name-input")
 var submitBtn = document.querySelector("#submit-btn")
 var timer;
 var timerCount = 60
@@ -86,9 +86,10 @@ currentQuestion++;
       clearInterval(timer);
       
     }
-    
+      var names = []    
     submitBtn.addEventListener("click", function() {
-      localStorage.setItem("Initials", inputEl.value)
+      window.open("https://airen22.github.io/Bootcamp-Challenge4-codingquizapp/highscore.html")
+      localStorage.setItem("Names", inputEl.value)
       localStorage.setItem("Recorded Score", timerCount);
     });
     
