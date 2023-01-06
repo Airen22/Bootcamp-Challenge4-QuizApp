@@ -71,10 +71,10 @@ currentQuestion++;
       clearInterval(timer);
       
     }
-      var names = []    
+      var scores = []    
     submitBtn.addEventListener("click", function() {
-      localStorage.setItem("Names", inputEl.value)
-      localStorage.setItem("Recorded Score", timerCount);
+      scores.push(timerCount + " - " + inputEl.value)
+      localStorage.setItem("Scores", scores)
     });
 
     var quizQuestions = [
