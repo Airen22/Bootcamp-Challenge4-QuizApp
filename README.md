@@ -15,8 +15,8 @@ N/A
 Go to the following URL:
 https://airen22.github.io/Bootcamp-Challenge4-codingquizapp/
 
-The following image shows a screenshot of the website: <img src = "assets\css\images\image1.png">
-The following image shows a screenshot of the highscores page: <img src = "assets\css\images\image2.png">
+The following image shows a screenshot of the website: <img src = "./assets/images/image1.png">
+The following image shows a screenshot of the highscores page: <img src = "./assets\images\image2.png">
 
 ## Credits
 
