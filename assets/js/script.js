@@ -88,7 +88,6 @@ currentQuestion++;
     }
       var names = []    
     submitBtn.addEventListener("click", function() {
-      window.open("https://airen22.github.io/Bootcamp-Challenge4-codingquizapp/highscore.html")
       localStorage.setItem("Names", inputEl.value)
       localStorage.setItem("Recorded Score", timerCount);
     });
