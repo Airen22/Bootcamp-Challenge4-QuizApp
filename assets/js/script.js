@@ -29,23 +29,8 @@ function startTimer() {
   }, 1000);
 }
 
-var quizQuestions = [
-    {
-        question: "How long is the olympic swimming pool?",
-        answers: ["20m","50m","100m"],
-        correct: "50m"
-    },
-    {
-      question: "What sport involves the Stanley Cup?",
-      answers: ["Golf","Hockey", "NASCAR"],
-      correct: "Hockey"
-    },
-    {
-      question: "Which location refers to the deepest point in the ocean?",
-      answers: ["Mariana's Point", "Oceanic Limit", "Challenger Deep"],
-      correct: "Challenger Deep",
-    },
-]
+// localStorage.setItem("arr", JSON.stringify(quizQuestions))
+
 
 function renderQuestions() {
   var questionIndex = quizQuestions[currentQuestion];
@@ -91,4 +76,22 @@ currentQuestion++;
       localStorage.setItem("Names", inputEl.value)
       localStorage.setItem("Recorded Score", timerCount);
     });
+
+    var quizQuestions = [
+      {
+          question: "How long is the olympic swimming pool?",
+          answers: ["20m","50m","100m"],
+          correct: "50m"
+      },
+      {
+        question: "What sport involves the Stanley Cup?",
+        answers: ["Golf","Hockey", "NASCAR"],
+        correct: "Hockey"
+      },
+      {
+        question: "Which location refers to the deepest point in the ocean?",
+        answers: ["Mariana's Point", "Oceanic Limit", "Challenger Deep"],
+        correct: "Challenger Deep",
+      },
+  ]
     
