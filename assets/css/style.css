@@ -11,12 +11,24 @@
     line-height: 30px;  
 }
 
-.hide {
+/* .hide {
+
+} */
+
+.score-container {
+    justify-items: center;
+    display: none;
+}
+.hidden {
     display: none;
 }
 
+/* .block {
+    display:none;
+} */
 .question-container {
     justify-items: center;
+    display: none;
 }
 
 button:hover {

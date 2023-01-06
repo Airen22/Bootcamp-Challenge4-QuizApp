@@ -1,29 +1,28 @@
 
-var startButton = document.querySelector(".start-button");
-var timerElement = document.querySelector(".timer-count");
-var startPage = document.querySelector(".start-page");
+var startBtn = document.querySelector(".start-button");
+var timerEl = document.querySelector(".timer-count");
+var startContainer = document.querySelector(".start-container");
 var questionContainer = document.querySelector(".question-container");
-var trivia = document.querySelector("#question");
+var question = document.querySelector("#question");
 var btns = document.querySelector("#btns");
-// var answerA = document.querySelector("#answer-a");
-// var answerB = document.querySelector("#answer-b");
-// var answerC = document.querySelector("#answer-c");
-var hide = document.querySelector(".hide");
-var score = 0
+var scoreContainer = document.querySelector(".score-container");
+var finalScore = document.querySelector("#final-score")
+var inputEl = document.querySelector("#initial-input")
+var submitBtn = document.querySelector("#submit-btn")
 var timer;
-var timerCount;
+var timerCount = 60
 var currentQuestion = 0;
 
+startBtn.addEventListener("click", startGame);
 
 function startGame() {
-  timerCount = 60;
   startTimer()
   renderQuestions()
 }
 function startTimer() {
   timer = setInterval(function() {
     timerCount--;
-    timerElement.textContent = "Timer: " + timerCount;
+    timerEl.textContent = "Timer: " + timerCount;
     if (timerCount === 0) {
       clearInterval(timer);
     }
@@ -44,18 +43,16 @@ var quizQuestions = [
     {
       question: "Which location refers to the deepest point in the ocean?",
       answers: ["Mariana's Point", "Oceanic Limit", "Challenger Deep"],
-      correct: "Mariana's Point",
+      correct: "Challenger Deep",
     },
 ]
 
 function renderQuestions() {
   var questionIndex = quizQuestions[currentQuestion];
-  console.log(questionIndex);
-  startPage.style.display = 'none';
-  hide.style.display = 'block';
+  startContainer.style.display = 'none';
+  questionContainer.style.display = 'block';
 
-  trivia.textContent = questionIndex.question;
-  console.log(questionIndex.question);
+  question.textContent = questionIndex.question;
   btns.innerHTML = "";
   questionIndex.answers.forEach(answer => {
     var button = document.createElement("button");
@@ -71,10 +68,8 @@ function renderQuestions() {
     var checkAnswer = function() {
       if (this.value !== quizQuestions[currentQuestion].correct) {
         timerCount -=10;
-        timerElement.textContent = "Timer: " + timerCount;
-        // message "incorrect"
+        timerEl.textContent = "Timer: " + timerCount;
       } else {
-        // message "correct"
       } 
 currentQuestion++;
       if (currentQuestion === quizQuestions.length) {
@@ -82,51 +77,18 @@ currentQuestion++;
       } else {
         renderQuestions()
       }
+
+    }
+      function endQuiz() {
+      scoreContainer.style.display = 'block';
+      finalScore.textContent = timerCount;
+      questionContainer.style.display = 'none';
+      clearInterval(timer);
       
-      // renderQuestions();
     }
     
-
-
-    // console.log(quizQuestions[i].answers.a);
-    // console.log(quizQuestions[i].answers.b);
-    // console.log(quizQuestions[i].answers.c);
-  
-
-  // function checkA() {
-  //   if (quizQuestions[0].correct === 'a') {
-  //     document.getElementById(".message")="correct";
-  //   } else {
-  //     timerCount-10
-  //   }
-  // }
-
-    // div.innerHTML += 'button'
-    // var obj = quizQuestions[i];
-    // create("p", {textContent: obj.question}, questionContainer);
-    // create("button", {textContent: obj.answers[0]})
-  
-
-
-//   for (var i = quizQuestions) {
+    submitBtn.addEventListener("click", function() {
+      localStorage.setItem("Initials", inputEl.value)
+      localStorage.setItem("Recorded Score", timerCount);
+    });
     
-//   }
-//   var output = [];
-//   quizQuestions.forEach(
-//     (currentQuestion, questionNumber) = function() {
-//       var answers = [];
-//       for (letter in currentQuestion.answers){
-//         answers.push(
-//           ''
-//         )
-//       }
-//     }
-//   )
-// for (var i = 0; i < quizQuestions; i++) {
-//   quizQuestions.textContent = question + answers
-// }
-
-
-
-
-startButton.addEventListener("click", startGame);
